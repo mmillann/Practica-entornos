@@ -1,16 +1,23 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+<<<<<<< HEAD
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package fruteria;
 
 import java.util.Scanner;
+=======
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package prpracticaentornos;
+>>>>>>> main
 
 /**
  *
  * @author Pablo
  */
 public class Fruteria {
+<<<<<<< HEAD
 
     /**
      * @param args the command line arguments
@@ -98,4 +105,7 @@ public class Fruteria {
 
     }
 
+=======
+    
+>>>>>>> main
 }
