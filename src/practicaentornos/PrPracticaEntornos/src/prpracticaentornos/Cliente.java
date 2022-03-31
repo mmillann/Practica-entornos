@@ -9,19 +9,20 @@ package prpracticaentornos;
  * @author Pablo
  */
 public class Cliente {
-        private String nombre;
+
+    private String nombre;
     private String apellidos;
     private int edad;
     private boolean amable;
     private boolean atendido;
-	
-	public Cliente(String nombre, String apellidos, int edad) {
+
+    public Cliente(String nombre, String apellidos, int edad) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
         this.amable = true;
         this.atendido = false;
-}
+    }
 
     public String getNombre() {
         return nombre;
@@ -62,7 +63,8 @@ public class Cliente {
     public void setAtendido(boolean atendido) {
         this.atendido = atendido;
     }
-     public void atenderCliente() {
+
+    public void atenderCliente() {
         System.out.println("El cliente está comprando...");
         this.atendido = true;
     }
