@@ -57,4 +57,22 @@ public class ListaClientes {
         }
     }
 
+    public void AtenderCliente() {
+        if (!ListaClientes.get(0).isAtendido()) {
+            ListaClientes.get(0).atenderCliente();
+            ListaClientes.remove(ListaClientes.get(0));
+            for (int i = 1; i < ListaClientes.size(); i++) {
+                ListaClientes.set(i - 1, ListaClientes.get(i));
+            }
+        }
+    }
+
+    public void dejarPasar() {
+
+        if (ListaClientes.get(0).isAmable()) {
+            ListaClientes.set(1, ListaClientes.get(0));
+        } else {
+            System.out.println("No quiere dejar pasar a nadie.");
+        }
+    }
 }
