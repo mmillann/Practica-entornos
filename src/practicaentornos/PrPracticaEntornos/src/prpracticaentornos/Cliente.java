@@ -17,8 +17,10 @@ public class Cliente {
     private int edad;
     private boolean amable;
     private boolean atendido;
-	
-	public Cliente(String nombre, String apellidos, int edad) {
+
+
+
+    public Cliente(String nombre, String apellidos, int edad) {
 
         this.nombre = nombre;
         this.apellidos = apellidos;
@@ -77,6 +79,5 @@ public class Cliente {
     public String toString() {
         return "\nCliente:" + " Nombre:" + this.nombre + " Apellidos: " + this.apellidos + " Edad: " + this.edad;
     }
-
 
 }
