@@ -8,7 +8,7 @@ package prpracticaentornos;
 
 /**
  *
- * @author Pablo
+ +* @author Pablo
  */
 public class Cliente {
 
