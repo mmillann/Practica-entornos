@@ -21,11 +21,12 @@ public class ListaClientes {
     }
 
     public ListaClientes() {
-        for (int i = 0; i < ListaClientes.size(); i++) {
+        for (int i = 0; i < 20; i++) {
             String Nombre = "Nombre " + Integer.toString(i);
             String Apellido = "Apellido " + Integer.toString(i);
             int edad = r.nextInt(70) + 18;
             Cliente CL = new Cliente(Nombre, Apellido, edad);
+            ListaClientes.add(CL);
         }
     }
 

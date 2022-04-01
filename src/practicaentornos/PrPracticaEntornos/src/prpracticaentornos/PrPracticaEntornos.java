@@ -14,7 +14,9 @@ public class PrPracticaEntornos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ListaClientes lista1 = new ListaClientes();
+        ListaClientes listaNoAtendidos = new ListaClientes();
+
     }
-    
+
 }
