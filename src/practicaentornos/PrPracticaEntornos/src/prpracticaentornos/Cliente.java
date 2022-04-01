@@ -2,34 +2,24 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-<<<<<<< HEAD
-package fruteria;
-=======
+
 package prpracticaentornos;
->>>>>>> main
+
 
 /**
  *
  * @author Pablo
  */
 public class Cliente {
-<<<<<<< HEAD
 
-    private String nombre;
-=======
-        private String nombre;
->>>>>>> main
+    private String nombre;   
     private String apellidos;
     private int edad;
     private boolean amable;
     private boolean atendido;
-<<<<<<< HEAD
-
-    public Cliente(String nombre, String apellidos, int edad) {
-=======
 	
 	public Cliente(String nombre, String apellidos, int edad) {
->>>>>>> main
+
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
@@ -76,7 +66,7 @@ public class Cliente {
     public void setAtendido(boolean atendido) {
         this.atendido = atendido;
     }
-<<<<<<< HEAD
+
 
     public void atenderCliente() {
         System.out.println("El cliente está comprando...");
@@ -88,6 +78,5 @@ public class Cliente {
         return "\nCliente:" + " Nombre:" + this.nombre + " Apellidos: " + this.apellidos + " Edad: " + this.edad;
     }
 
-=======
->>>>>>> main
+
 }
