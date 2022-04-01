@@ -75,4 +75,15 @@ public class ListaClientes {
             System.out.println("No quiere dejar pasar a nadie.");
         }
     }
+
+    public String ClientesAtendidos() {
+        String lista = "";
+        for (int i = 0; i < ListaClientes.size(); i++) {
+            if (ListaClientes.get(i).isAtendido()) {
+                lista = "\n" + ListaClientes.get(i).toString();
+            }
+        }
+        return lista;
+    }
+
 }
