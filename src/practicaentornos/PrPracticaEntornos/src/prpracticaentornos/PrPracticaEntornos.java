@@ -14,7 +14,10 @@ public class PrPracticaEntornos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        ListaClientes lista1 = new ListaClientes();
+        ListaClientes listaNoAtendidos = new ListaClientes();
+
+
     }
-    
+
 }

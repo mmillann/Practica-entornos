@@ -13,7 +13,7 @@ import java.util.Random;
  */
 public class ListaClientes {
 
-    private ArrayList<Cliente> ListaClientes = new ArrayList<Cliente>(20);
+    private ArrayList<Cliente> ListaClientes = new ArrayList<Cliente>();
     private Random r = new Random();
 
     public ListaClientes(Cliente CL) {
@@ -21,11 +21,12 @@ public class ListaClientes {
     }
 
     public ListaClientes() {
-        for (int i = 0; i < ListaClientes.size(); i++) {
+        for (int i = 0; i < 20; i++) {
             String Nombre = "Nombre " + Integer.toString(i);
             String Apellido = "Apellido " + Integer.toString(i);
             int edad = r.nextInt(70) + 18;
             Cliente CL = new Cliente(Nombre, Apellido, edad);
+            ListaClientes.add(CL);
         }
     }
 
@@ -57,4 +58,55 @@ public class ListaClientes {
         }
     }
 
+    public void AtenderCliente() {
+        if (!ListaClientes.get(0).isAtendido()) {
+            ListaClientes.get(0).atenderCliente();
+            ListaClientes.remove(ListaClientes.get(0));
+            for (int i = 1; i < ListaClientes.size(); i++) {
+                ListaClientes.set(i - 1, ListaClientes.get(i));
+            }
+        }
+    }
+
+    public void dejarPasar() {
+
+        if (ListaClientes.get(0).isAmable()) {
+            ListaClientes.set(1, ListaClientes.get(0));
+        } else {
+            System.out.println("No quiere dejar pasar a nadie.");
+        }
+    }
+
+    public String ClientesAtendidos() {
+        String lista = "";
+        for (int i = 0; i < ListaClientes.size(); i++) {
+            if (ListaClientes.get(i).isAtendido()) {
+                lista = "\n" + ListaClientes.get(i).toString();
+            }
+        }
+        return lista;
+    }
+  public String ClientesNoAtendidos() {
+        String lista = "";
+
+        for (int i = 0; i < ListaClientes.size(); i++) {
+            if (!ListaClientes.get(i).isAtendido()) {
+                lista = "\n" + ListaClientes.get(i).toString();
+            }
+        }
+        return lista;
+    }
+
+    public void preferencia() {
+        int num = 65;
+        for (int i = 0; i < ListaClientes.size(); i++) {
+            if (ListaClientes.get(i).getEdad() > 65) {
+                if (ListaClientes.get(i).getEdad() > num) {
+                    ListaClientes.set(0, ListaClientes.get(i));
+                    num = ListaClientes.get(i).getEdad();
+                }
+            }
+        }
+
+}
 }
