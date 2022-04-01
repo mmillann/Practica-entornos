@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+
 package prpracticaentornos;
+
 
 /**
  *
@@ -10,13 +12,16 @@ package prpracticaentornos;
  */
 public class Cliente {
 
-    private String nombre;
+    private String nombre;   
     private String apellidos;
     private int edad;
     private boolean amable;
     private boolean atendido;
 
+
+
     public Cliente(String nombre, String apellidos, int edad) {
+
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.edad = edad;
@@ -64,6 +69,7 @@ public class Cliente {
         this.atendido = atendido;
     }
 
+
     public void atenderCliente() {
         System.out.println("El cliente está comprando...");
         this.atendido = true;
@@ -73,4 +79,5 @@ public class Cliente {
     public String toString() {
         return "\nCliente:" + " Nombre:" + this.nombre + " Apellidos: " + this.apellidos + " Edad: " + this.edad;
     }
+
 }
