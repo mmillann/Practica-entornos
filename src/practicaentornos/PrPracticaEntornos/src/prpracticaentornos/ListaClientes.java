@@ -15,6 +15,7 @@ public class ListaClientes {
 
     private ArrayList<Cliente> ListaClientes = new ArrayList<Cliente>();
     private Random r = new Random();
+    private ArrayList<Cliente> ListaClientesAtendidos = new ArrayList<Cliente>();
 
     public ListaClientes(Cliente CL) {
         ListaClientes.add(CL);
@@ -30,16 +31,12 @@ public class ListaClientes {
         }
     }
 
-    public void AdelantarCliente(int puestos, Cliente cliente) {
+    public void AdelantarCliente(Cliente cliente) {
 
         int indice = ListaClientes.indexOf(cliente);
         if (indice != -1) {
-            System.out.println("El cliente ha pasado del puesto " + (indice + 1) + " al puesto " + (indice - puestos + 1));
-            if (puestos > indice) {
-                ListaClientes.set(0, cliente);
-            } else {
-                ListaClientes.set(indice - puestos, cliente);
-            }
+            System.out.println("El cliente ha pasado del puesto " + (indice + 1) + " al puesto " + (indice));
+            
         } else {
             System.out.println("El cliente no existe");
         }
@@ -61,6 +58,7 @@ public class ListaClientes {
     public void AtenderCliente() {
         if (!ListaClientes.get(0).isAtendido()) {
             ListaClientes.get(0).atenderCliente();
+            ListaClientesAtendidos.add(ListaClientes.get(0));
             ListaClientes.remove(ListaClientes.get(0));
             for (int i = 1; i < ListaClientes.size(); i++) {
                 ListaClientes.set(i - 1, ListaClientes.get(i));
@@ -79,9 +77,9 @@ public class ListaClientes {
 
     public String ClientesAtendidos() {
         String lista = "";
-        for (int i = 0; i < ListaClientes.size(); i++) {
-            if (ListaClientes.get(i).isAtendido()) {
-                lista = "\n" + ListaClientes.get(i).toString();
+        for (int i = 0; i < ListaClientesAtendidos.size(); i++) {
+            if (ListaClientesAtendidos.get(i).isAtendido()) {
+                lista = "\n" + ListaClientesAtendidos.get(i).toString();
             }
         }
         return lista;
