@@ -18,7 +18,7 @@ public class PrPracticaEntornos {
         Cliente David = new Cliente("David", "Broncano Aguilar", 35);
         ListaClientes lista2 = new ListaClientes(David);
         int opcion = 0;
-      
+        
     }
 
 }
