@@ -15,9 +15,10 @@ public class PrPracticaEntornos {
      */
     public static void main(String[] args) {
         ListaClientes lista1 = new ListaClientes();
-        ListaClientes listaNoAtendidos = new ListaClientes();
-
-
+        Cliente David = new Cliente("David", "Broncano Aguilar", 35);
+        ListaClientes lista2 = new ListaClientes(David);
+        int opcion = 0;
+      
     }
 
 }
