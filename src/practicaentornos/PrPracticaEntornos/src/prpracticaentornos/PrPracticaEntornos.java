@@ -22,43 +22,60 @@ public class PrPracticaEntornos {
         int opcion = 0;
         Scanner sc = new Scanner(System.in);
         System.out.println("Bienvenido a la fruteria ");
-        String menu = "\nElige una de estas opciones: Nuevo cliente\n"
-                + "1. Despachar o atender cliente\n"
-                + "2. Cliente abandona la cola\n"
-                + "3. Adelantar 1 puesto a un cliente\n"
-                + "4. Retrasar 1 puesto a un cliente \n"
-                + "5. Dejar pasar al siguiente cliente \n"
-                + "6. Mostrar el listado de clientes que aún no han sido atendidos\n"
-                + "7. Mostrar el listado de clientes ya atendidos\n"
-                + "8. Las personas mayores tienen preferencia"
-                + "9. Salir";
+        String menu = "\nElige una de estas opciones: \n"
+                + "1. Nuevo cliente \n"
+                + "2. Despachar o atender cliente\n"
+                + "3. Cliente abandona la cola\n"
+                + "4. Adelantar 1 puesto a un cliente\n"
+                + "5. Retrasar 1 puesto a un cliente \n"
+                + "6. Dejar pasar al siguiente cliente \n"
+                + "7. Mostrar el listado de clientes que aún no han sido atendidos\n"
+                + "8. Mostrar el listado de clientes ya atendidos\n"
+                + "9. Las personas mayores tienen preferencia"
+                + "10. Salir";
+        
+        System.out.println(menu);
         opcion = sc.nextInt();
         do {
+            
             switch (opcion) {
                 case 1:
+                    
+                    break;
+                case 2:
                     lista1.AtenderCliente();
                     System.out.println("CLiente atendido de forma exitosa");
                     break;
-                case 2:
+                case 3:
                     
                     break;
-                case 3:
-                    lista1.AdelantarCliente(David);
-                    break;
                 case 4:
+                    lista1.AdelantarCliente(David);
+                    System.out.println("El cliente ha sido adelantado en la cola");
                     break;
                 case 5:
+                    lista1.RetrasarCliente(opcion, David);
+                    System.out.println("El cliente ha sido retrasado en la cola");                    
                     break;
                 case 6:
+                    lista1.dejarPasar();
+                    System.out.println("Se ha dejado pasar de forma exitosa");                    
                     break;
                 case 7:
+                    lista1.ClientesNoAtendidos();                    
                     break;
                 case 8:
+                    lista1.ClientesAtendidos();                    
                     break;
                 case 9:
+                    lista1.preferencia();
+                    System.out.println("Ahora los mayores de 65 tienen preferencia");                   
+                    break;
+                case 10:
                     System.out.println("Saliendo...");
                     break;
                 default:
+                    System.out.println("Opción incorrecta");
                     break;
             }
         } while (opcion != 9);
