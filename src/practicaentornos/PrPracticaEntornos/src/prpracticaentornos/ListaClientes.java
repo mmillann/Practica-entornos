@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -30,6 +30,9 @@ public class ListaClientes {
             ListaClientes.add(CL);
         }
     }
+    public void NuevoCliente(Cliente nuevo){
+        ListaClientes.add(nuevo);
+    }
 
     public void AdelantarCliente(Cliente cliente) {
 
@@ -40,6 +43,16 @@ public class ListaClientes {
         } else {
             System.out.println("El cliente no existe");
         }
+    }
+    public boolean clienteAbandona(Cliente c){
+        boolean sePuedeIr=false;
+        for(int i=0;i<ListaClientes.size();i++){
+            if(ListaClientes.get(i)==c){
+                ListaClientes.remove(c);
+                sePuedeIr=true;
+            }
+        }
+        return sePuedeIr;
     }
 
     public void RetrasarCliente(int puestos, Cliente cliente) {

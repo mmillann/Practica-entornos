@@ -28,6 +28,7 @@ public class Cliente {
         this.amable = true;
         this.atendido = false;
     }
+    
 
     public String getNombre() {
         return nombre;

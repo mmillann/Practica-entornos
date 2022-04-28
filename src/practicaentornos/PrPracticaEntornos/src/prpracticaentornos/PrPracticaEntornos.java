@@ -33,21 +33,30 @@ public class PrPracticaEntornos {
                 + "8. Mostrar el listado de clientes ya atendidos\n"
                 + "9. Las personas mayores tienen preferencia"
                 + "10. Salir";
-        
+        do {
         System.out.println(menu);
         opcion = sc.nextInt();
-        do {
+        
             
             switch (opcion) {
                 case 1:
+                    System.out.println("Nombre del cliente: ");
+                    String nombre=sc.nextLine();
+                    System.out.println("Apellido del cliente: ");
+                    String apellido=sc.nextLine();
+                    System.out.println("Edad del cliente: ");
+                    int edad=sc.nextInt();
+                    Cliente nuevo=new Cliente(nombre,apellido,edad);
+                    lista1.NuevoCliente(nuevo);
+                    System.out.println("Cliente añadido con éxito");
                     
                     break;
                 case 2:
                     lista1.AtenderCliente();
-                    System.out.println("CLiente atendido de forma exitosa");
+                    System.out.println("Cliente atendido de forma exitosa");
                     break;
                 case 3:
-                    
+                    System.out.println("¿Qué cliente va a abandonar la cola?");
                     break;
                 case 4:
                     lista1.AdelantarCliente(David);
