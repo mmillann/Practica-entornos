@@ -63,7 +63,7 @@ public class PrPracticaEntornos {
                     System.out.println("El cliente ha sido adelantado en la cola");
                     break;
                 case 5:
-                    lista1.RetrasarCliente(opcion, David);
+                    lista1.RetrasarCliente(David);
                     System.out.println("El cliente ha sido retrasado en la cola");                    
                     break;
                 case 6:

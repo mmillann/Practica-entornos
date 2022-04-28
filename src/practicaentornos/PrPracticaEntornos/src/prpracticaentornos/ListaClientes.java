@@ -1,4 +1,4 @@
- /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -30,7 +30,8 @@ public class ListaClientes {
             ListaClientes.add(CL);
         }
     }
-    public void NuevoCliente(Cliente nuevo){
+
+    public void NuevoCliente(Cliente nuevo) {
         ListaClientes.add(nuevo);
     }
 
@@ -38,30 +39,41 @@ public class ListaClientes {
 
         int indice = ListaClientes.indexOf(cliente);
         if (indice != -1) {
-            System.out.println("El cliente ha pasado del puesto " + (indice + 1) + " al puesto " + (indice));
-            
+            System.out.println("El cliente ha pasado del puesto " + indice + " al puesto " + (indice - 1));
+
+            Cliente primero;
+            primero = ListaClientes.get(indice - 1);
+            ListaClientes.set(indice - 1, cliente);
+            ListaClientes.set(indice, primero);
+
         } else {
             System.out.println("El cliente no existe");
         }
     }
-    public boolean clienteAbandona(Cliente c){
-        boolean sePuedeIr=false;
-        for(int i=0;i<ListaClientes.size();i++){
-            if(ListaClientes.get(i)==c){
-                ListaClientes.remove(c);
-                sePuedeIr=true;
-            }
+
+    public boolean clienteAbandona(Cliente c) {
+        boolean sePuedeIr = false;
+
+        if (ListaClientes.indexOf(c) == -1) {
+            System.out.println("No existe ese cliente");
+        } else {
+            ListaClientes.remove(ListaClientes.get(ListaClientes.indexOf(c)));
+            dejarPasar();
         }
+
         return sePuedeIr;
     }
 
-    public void RetrasarCliente(int puestos, Cliente cliente) {
+    public void RetrasarCliente(Cliente cliente) {
 
         int indice = ListaClientes.indexOf(cliente);
         if (indice != -1) {
-            System.out.println("El cliente ha pasado del puesto " + indice + " al puesto " + (indice + puestos));
+            System.out.println("El cliente ha pasado del puesto " + indice + " al puesto " + (indice + 1));
 
-            ListaClientes.set(indice + puestos, cliente);
+            Cliente primero;
+            primero = ListaClientes.get(indice + 1);
+            ListaClientes.set(indice + 1, cliente);
+            ListaClientes.set(indice, primero);
 
         } else {
             System.out.println("El cliente no existe");
@@ -80,12 +92,10 @@ public class ListaClientes {
     }
 
     public void dejarPasar() {
-
-        if (ListaClientes.get(0).isAmable()) {
-            ListaClientes.set(1, ListaClientes.get(0));
-        } else {
-            System.out.println("No quiere dejar pasar a nadie.");
-        }
+        Cliente primero;
+        primero = ListaClientes.get(0);
+        ListaClientes.set(0, ListaClientes.get(1));
+        ListaClientes.set(1, primero);
     }
 
     public String ClientesAtendidos() {
@@ -97,7 +107,8 @@ public class ListaClientes {
         }
         return lista;
     }
-  public String ClientesNoAtendidos() {
+
+    public String ClientesNoAtendidos() {
         String lista = "";
 
         for (int i = 0; i < ListaClientes.size(); i++) {
@@ -119,5 +130,5 @@ public class ListaClientes {
             }
         }
 
-}
+    }
 }

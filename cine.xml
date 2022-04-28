@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cine>
+    <salas numero="1">
+        <pelicula codigo="001">
+            <nombre>Morbius</nombre>
+            <anio>2022</anio>
+            <director>Daniel Espinosa</director>
+            <duracion>104</duracion>
+            <idioma>Castellano/Ingles</idioma>
+        </pelicula>
+        <pelicula codigo="002">
+            <nombre>Animales fantasticos: Los secretos de Dumbledore</nombre>
+            <anio>2022</anio>
+            <director>David Yates</director>
+            <duracion>143</duracion>
+            <idioma>Ingles</idioma>
+        </pelicula>
+        <pelicula codigo="003">
+            <nombre>The Batman</nombre>
+            <anio>2019</anio>
+            <director>Matt Reeves</director>
+            <duracion>176</duracion>
+            <idioma>Ingles</idioma>
+        </pelicula>
+    </salas>
+    <salas numero="2">
+        <pelicula codigo="004">
+            <nombre>Canallas</nombre>
+            <anio>2014</anio>
+            <director>Daniel Guzman</director>
+            <duracion>96</duracion>
+            <idioma>Castellano</idioma>
+        </pelicula>
+        <pelicula codigo="005">
+            <nombre>Uncharted</nombre>
+            <anio>2021</anio>
+            <director>Ruben Fleischer</director>
+            <duracion>116</duracion>
+            <idioma>Castellano/Ingles</idioma>
+        </pelicula>
+        <pelicula codigo="006">
+            <nombre>Sonic 2: La pelicula</nombre>
+            <anio>2022</anio>
+            <director>Jeff Fowler</director>
+            <duracion>122</duracion>
+            <idioma>Ingles</idioma>
+        </pelicula>
+    </salas>
+    <salas numero="3">
+        <pelicula codigo="007">
+            <nombre>Los tipos Malos</nombre>
+            <anio>2011</anio>
+            <director>Pierre Perifel</director>
+            <duracion>100</duracion>
+            <idioma>Frances</idioma>
+        </pelicula>
+        <pelicula codigo="008">
+            <nombre>Codigo emperador</nombre>
+            <anio>2016</anio>
+            <director>Jorge Coira</director>
+            <duracion>106</duracion>
+            <idioma>Castellano</idioma>
+        </pelicula>
+        <pelicula codigo="009">
+            <nombre>CODA</nombre>
+            <anio>2022</anio>
+            <director>Sian Heder</director>
+            <duracion>111</duracion>
+            <idioma>Ingles</idioma>
+        </pelicula>
+    </salas>
+</cine>
