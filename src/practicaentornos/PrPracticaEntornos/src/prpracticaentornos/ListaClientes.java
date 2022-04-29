@@ -21,6 +21,22 @@ public class ListaClientes {
         ListaClientes.add(CL);
     }
 
+    public ArrayList<Cliente> getListaClientes() {
+        return ListaClientes;
+    }
+
+    public void setListaClientes(ArrayList<Cliente> ListaClientes) {
+        this.ListaClientes = ListaClientes;
+    }
+
+    public ArrayList<Cliente> getListaClientesAtendidos() {
+        return ListaClientesAtendidos;
+    }
+
+    public void setListaClientesAtendidos(ArrayList<Cliente> ListaClientesAtendidos) {
+        this.ListaClientesAtendidos = ListaClientesAtendidos;
+    }
+
     public ListaClientes() {
         for (int i = 0; i < 20; i++) {
             String Nombre = "Nombre " + Integer.toString(i);
