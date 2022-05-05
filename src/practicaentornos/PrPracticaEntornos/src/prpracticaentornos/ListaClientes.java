@@ -122,7 +122,7 @@ public class ListaClientes {
         String lista = "";
         for (int i = 0; i < ListaClientesAtendidos.size(); i++) {
             if (ListaClientesAtendidos.get(i).isAtendido()) {
-                lista = "\n" + ListaClientesAtendidos.get(i).toString();
+                lista += "\n" + ListaClientesAtendidos.get(i).toString();
             }
         }
         return lista;
@@ -133,7 +133,7 @@ public class ListaClientes {
 
         for (int i = 0; i < ListaClientes.size(); i++) {
             if (!ListaClientes.get(i).isAtendido()) {
-                lista = "\n" + ListaClientes.get(i).toString();
+                lista += "\n" + ListaClientes.get(i).toString();
             }
         }
         return lista;
