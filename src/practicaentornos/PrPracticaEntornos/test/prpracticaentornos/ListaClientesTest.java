@@ -61,11 +61,11 @@ public class ListaClientesTest {
 
         ListaClientes fruVacia = new ListaClientes(c1);
         fruVacia.NuevoCliente(c2);
-        assertTrue(fru.clienteAbandona(c1));
-        assertFalse(fru.clienteAbandona(c2));
-        assertFalse(fruVacia.clienteAbandona(c2));
-        assertEquals(0, fruVacia.getListaClientes().size());
-
+        //assertTrue(fru.clienteAbandona(c1));
+        //assertFalse(fru.clienteAbandona(c2));
+        //assertTrue(fruVacia.clienteAbandona(c2));
+        assertEquals(2, fruVacia.getListaClientes().size());
+        
         
         
     }
@@ -75,6 +75,17 @@ public class ListaClientesTest {
      */
     @Test
     public void testRetrasarCliente() {
+        ListaClientes fru = new ListaClientes();
+        Cliente c1 = new Cliente("Paco", "Garcia", 33);
+        Cliente c2 = new Cliente("Paco", "Garcia", 33);
+        fru.NuevoCliente(c1);
+        fru.NuevoCliente(c2);
+        
+        fru.RetrasarCliente(c1);
+        
+        assertEquals(c1, fru.getListaClientes().get(21));
+        
+        
     }
 
     /**
@@ -82,6 +93,21 @@ public class ListaClientesTest {
      */
     @Test
     public void testAtenderCliente() {
+        ListaClientes fru = new ListaClientes();
+       
+        
+        Cliente c2 = new Cliente("Paco", "Garcia", 33);
+        fru.NuevoCliente(c2);
+        
+        Cliente c3 = fru.getListaClientes().get(0);
+        assertEquals(fru.getListaClientes().get(0),c3 );
+        fru.AtenderCliente();
+        
+        //assertEquals(c2, fru.getListaClientes().get(20));
+        //Crea un nuevo cliente en la posición 0 del arrayList para comprobar que una vez atendido, ya no siga estando en la posición 0
+        assertEquals(1, fru.getListaClientesAtendidos().size());
+        assertNotEquals(fru.getListaClientes().get(0),c3 );
+        
     }
 
     /**
@@ -89,6 +115,16 @@ public class ListaClientesTest {
      */
     @Test
     public void testDejarPasar() {
+        ListaClientes fru = new ListaClientes();
+        Cliente c1 = fru.getListaClientes().get(0);
+        Cliente c2 = fru.getListaClientes().get(1);
+        
+        
+        fru.dejarPasar();
+        
+        assertEquals(c1, fru.getListaClientes().get(1));
+        assertEquals(c2,fru.getListaClientes().get(0));
+        
     }
 
     /**
@@ -96,6 +132,7 @@ public class ListaClientesTest {
      */
     @Test
     public void testClientesAtendidos() {
+        
     }
 
     /**
