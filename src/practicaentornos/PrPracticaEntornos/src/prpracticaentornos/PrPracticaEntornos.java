@@ -41,7 +41,7 @@ public class PrPracticaEntornos {
             switch (opcion) {
                 case 1:
                     System.out.println("Nombre del cliente: ");
-                    String nombre=sc.nextLine();
+                    String nombre=sc.next();
                     System.out.println("Apellido del cliente: ");
                     String apellido=sc.nextLine();
                     System.out.println("Edad del cliente: ");
