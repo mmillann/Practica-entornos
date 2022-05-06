@@ -31,54 +31,62 @@ public class PrPracticaEntornos {
                 + "6. Dejar pasar al siguiente cliente \n"
                 + "7. Mostrar el listado de clientes que aún no han sido atendidos\n"
                 + "8. Mostrar el listado de clientes ya atendidos\n"
-                + "9. Las personas mayores tienen preferencia"
+                + "9. Las personas mayores tienen preferencia\n"
                 + "10. Salir";
         do {
-        System.out.println(menu);
-        opcion = sc.nextInt();
-        
-            
+            System.out.println(menu);
+            opcion = sc.nextInt();
+
             switch (opcion) {
                 case 1:
                     System.out.println("Nombre del cliente: ");
                     String nombre=sc.next();
+
                     System.out.println("Apellido del cliente: ");
-                    String apellido=sc.nextLine();
+                    String apellido = sc.next();
                     System.out.println("Edad del cliente: ");
-                    int edad=sc.nextInt();
-                    Cliente nuevo=new Cliente(nombre,apellido,edad);
+                    int edad = sc.nextInt();
+                    Cliente nuevo = new Cliente(nombre, apellido, edad);
                     lista1.NuevoCliente(nuevo);
                     System.out.println("Cliente añadido con éxito");
-                    
+
                     break;
                 case 2:
                     lista1.AtenderCliente();
                     System.out.println("Cliente atendido de forma exitosa");
                     break;
                 case 3:
-                    System.out.println("¿Qué cliente va a abandonar la cola?");
+                    System.out.println("Puesto del cliente que abandona la cola:");
+                    int i = sc.nextInt();
+                    lista1.clienteAbandona(lista1.getListaClientes().get(i));
                     break;
                 case 4:
-                    lista1.AdelantarCliente(David);
+                    System.out.println("Puesto del cliente que abandona la cola:");
+                    i = sc.nextInt();
+                    lista1.AdelantarCliente(lista1.getListaClientes().get(i));
                     System.out.println("El cliente ha sido adelantado en la cola");
                     break;
                 case 5:
-                    lista1.RetrasarCliente(David);
-                    System.out.println("El cliente ha sido retrasado en la cola");                    
+                    System.out.println("Puesto del cliente que abandona la cola:");
+                    i = sc.nextInt();
+                    lista1.RetrasarCliente(lista1.getListaClientes().get(i));
+                    System.out.println("El cliente ha sido retrasado en la cola");
                     break;
                 case 6:
                     lista1.dejarPasar();
-                    System.out.println("Se ha dejado pasar de forma exitosa");                    
+                    System.out.println("Se ha dejado pasar de forma exitosa");
                     break;
                 case 7:
-                    lista1.ClientesNoAtendidos();                    
+
+                    System.out.println(lista1.ClientesNoAtendidos());
+
                     break;
                 case 8:
-                    lista1.ClientesAtendidos();                    
+                    System.out.println(lista1.ClientesAtendidos());
                     break;
                 case 9:
                     lista1.preferencia();
-                    System.out.println("Ahora los mayores de 65 tienen preferencia");                   
+                    System.out.println("Ahora los mayores de 65 tienen preferencia");
                     break;
                 case 10:
                     System.out.println("Saliendo...");

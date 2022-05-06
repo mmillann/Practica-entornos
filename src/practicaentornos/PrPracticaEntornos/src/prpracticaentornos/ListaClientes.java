@@ -69,15 +69,15 @@ public class ListaClientes {
 
     public boolean clienteAbandona(Cliente c) {
         boolean sePuedeIr = false;
-        if(ListaClientes.size()>0){
-        if (ListaClientes.indexOf(c) == -1) {
-            System.out.println("No existe ese cliente");
+        if (ListaClientes.size() > 0) {
+            if (ListaClientes.indexOf(c) == -1) {
+                System.out.println("No existe ese cliente");
+            } else {
+                ListaClientes.remove(ListaClientes.get(ListaClientes.indexOf(c)));
+                dejarPasar();
+                sePuedeIr = true;
+            }
         } else {
-            ListaClientes.remove(ListaClientes.get(ListaClientes.indexOf(c)));
-            dejarPasar();
-            sePuedeIr=true;
-        }
-        }else{
             System.out.println("No hay clientes");
         }
 
@@ -106,8 +106,14 @@ public class ListaClientes {
             ListaClientesAtendidos.add(ListaClientes.get(0));
             ListaClientes.remove(ListaClientes.get(0));
             for (int i = 1; i < ListaClientes.size(); i++) {
+                Cliente primero;
+                primero = ListaClientes.get(i - 1);
                 ListaClientes.set(i - 1, ListaClientes.get(i));
+                if (primero != null) {
+                    ListaClientes.set(i, primero);
+                }
             }
+            
         }
     }
 
@@ -122,7 +128,7 @@ public class ListaClientes {
         String lista = "";
         for (int i = 0; i < ListaClientesAtendidos.size(); i++) {
             if (ListaClientesAtendidos.get(i).isAtendido()) {
-                lista = "\n" + ListaClientesAtendidos.get(i).toString();
+                lista += "\n" + ListaClientesAtendidos.get(i).toString();
             }
         }
         return lista;
@@ -133,7 +139,7 @@ public class ListaClientes {
 
         for (int i = 0; i < ListaClientes.size(); i++) {
             if (!ListaClientes.get(i).isAtendido()) {
-                lista = "\n" + ListaClientes.get(i).toString();
+                lista += "\n" + ListaClientes.get(i).toString();
             }
         }
         return lista;
