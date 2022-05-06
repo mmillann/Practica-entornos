@@ -31,7 +31,7 @@ public class PrPracticaEntornos {
                 + "6. Dejar pasar al siguiente cliente \n"
                 + "7. Mostrar el listado de clientes que aún no han sido atendidos\n"
                 + "8. Mostrar el listado de clientes ya atendidos\n"
-                + "9. Las personas mayores tienen preferencia"
+                + "9. Las personas mayores tienen preferencia\n"
                 + "10. Salir";
         do {
             System.out.println(menu);
@@ -94,7 +94,7 @@ public class PrPracticaEntornos {
                     System.out.println("Opción incorrecta");
                     break;
             }
-        } while (opcion != 9);
+        } while (opcion != 10);
     }
 
 }

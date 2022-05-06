@@ -106,14 +106,12 @@ public class ListaClientes {
             ListaClientesAtendidos.add(ListaClientes.get(0));
             ListaClientes.remove(ListaClientes.get(0));
             for (int i = 1; i < ListaClientes.size(); i++) {
-                Cliente primero;
-                primero = ListaClientes.get(i - 1);
-                ListaClientes.set(i - 1, ListaClientes.get(i));
-                if (primero != null) {
-                    ListaClientes.set(i, primero);
+                if (ListaClientes.get(i - 1) == null) {
+                    ListaClientes.set(i - 1, ListaClientes.get(i));
+                    ListaClientes.remove(ListaClientes.get(i));
                 }
             }
-            
+
         }
     }
 
@@ -146,12 +144,12 @@ public class ListaClientes {
     }
 
     public void preferencia() {
-        int num = 65;
-        for (int i = 0; i < ListaClientes.size(); i++) {
-            if (ListaClientes.get(i).getEdad() > 65) {
-                if (ListaClientes.get(i).getEdad() > num) {
-                    ListaClientes.set(0, ListaClientes.get(i));
-                    num = ListaClientes.get(i).getEdad();
+        for (int i = 0; i < ListaClientes.size()-1; i++) {
+            for (int j = 0; j < ListaClientes.size()-1; j++) {                                                              
+                if (ListaClientes.get(j + 1).getEdad() > ListaClientes.get(j).getEdad()) {
+                     Cliente clienteMayor = ListaClientes.get(j);
+                    ListaClientes.set(j, ListaClientes.get(j+1));
+                    ListaClientes.set(j+1, clienteMayor);
                 }
             }
         }
